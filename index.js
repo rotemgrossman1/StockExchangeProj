@@ -35,17 +35,19 @@ const dummyStocksArr = [
     change: 2.50
   }
 ]
+setTimeout(() => {
 // Write an event listener for the button click that will eventually render these stocks.
-searchBtn.addEventListener("click", ()=>{
-    const resultsFromBrowser = dummyStocksArr.filter(stock=>getPrefex(stock, searchBar.value))
-    loading.style.display = "block"
-    for(let stock of resultsFromBrowser){
-        const stockToShow = document.createElement("li")
-        const companyLink = document.createElement("a")
-        companyLink.href = '/company.html?symbol=' + stock.symbol
-        companyLink.innerHTML = stock.name
-        stockToShow.appendChild(companyLink)
-        results.appendChild(stockToShow)
-    }
-    loading.style.display = "none"
+    searchBtn.addEventListener("click", ()=>{
+        const resultsFromBrowser = dummyStocksArr.filter(stock=>getPrefex(stock, searchBar.value))
+        loading.style.display = "block"
+        for(let stock of resultsFromBrowser){
+            const stockToShow = document.createElement("li")
+            const companyLink = document.createElement("a")
+            companyLink.href = '/company.html?symbol=' + stock.symbol
+            companyLink.innerHTML = stock.name
+            stockToShow.appendChild(companyLink)
+            results.appendChild(stockToShow)
+        }
+        loading.style.display = "none"
+    }, 1000)
 })
