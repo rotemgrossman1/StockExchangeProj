@@ -4,19 +4,19 @@ import Renderer from './view.js';
 const model = Model();
 const renderer = Renderer();
 
-// renderer.displayData()
-// function getStocks(searchWord){
-//     return fetch(models.getStocks(searchWord))
-//     .then(res => res.json())
-// }
 
 const searchBtn = document.querySelector("#searchBtn")
-    searchBtn.addEventListener("click",() =>{
-        init()
+    searchBtn.addEventListener("click",async() =>{
+        renderer.showLoading()
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        await init()
+        renderer.hideLoading()
+        
     })
 const init = async function () {
     const searchBar = document.querySelector("#searchBar");
     const resultsFromBrowser = await model.getStocks(searchBar.value)
     renderer.displayResults(resultsFromBrowser)
+    
 }
 
