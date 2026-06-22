@@ -1,0 +1,91 @@
+/* Reset basic styles and set up a clean font */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Container to align input and button nicely */
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#searchBar {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+#searchBar:focus {
+    border-color: #007bff;
+}
+
+#searchBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#searchBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Loading indicator styling */
+#loading {
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* Results list styling */
+#results {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#results li {
+    background: white;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#results li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Make the whole list item clickable by styling the link inside it */
+#results a {
+    display: block;
+    padding: 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Distinguish the symbol visually */
+#results .symbol {
+    font-weight: bold;
+    color: #007bff;
+    margin-right: 10px;
+    background-color: #e7f3ff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+}
